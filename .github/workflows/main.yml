@@ -37,7 +37,7 @@ jobs:
     - name: Install dependencies
       run: yarn --frozen-lockfile
 
-    - name: Deploy application
+    - name: Deploy stage application
       if: ${{ github.ref == 'refs/heads/stage' }}
       uses: akhileshns/heroku-deploy@v3.12.12
       with:
@@ -46,6 +46,7 @@ jobs:
         heroku_email: "nathallyccd@gmail.com"
         buildpack: "https://github.com/zidizei/heroku-buildpack-tsc#v2.0"
       
+    - name: Deploy prod application
       if: ${{ github.ref == 'refs/heads/main' }}
       uses: akhileshns/heroku-deploy@v3.12.12
       with:
