@@ -1,8 +1,9 @@
 import { Router, Response, Request, NextFunction } from 'express'
 import httpProxy from 'express-http-proxy'
+import 'dotenv/config'
 
 const userRouter = Router()
-const userProxy = httpProxy('http://localhost:5011/')
+const userProxy = httpProxy(process.env.USER_API_URL)
 
 const handle = (request: Request, response: Response, next: NextFunction) => {
   userProxy(request, response, next)

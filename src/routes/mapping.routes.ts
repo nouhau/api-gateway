@@ -1,8 +1,9 @@
 import { Router, Response, Request, NextFunction } from 'express'
 import httpProxy from 'express-http-proxy'
+import 'dotenv/config'
 
 const mappingRouter = Router()
-const mappingProxy = httpProxy('http://localhost:5010/')
+const mappingProxy = httpProxy(process.env.MAPPING_API_URL)
 
 const handle = (request: Request, response: Response, next: NextFunction) => {
   mappingProxy(request, response, next)
