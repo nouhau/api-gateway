@@ -1,10 +1,12 @@
 
 import express, { Response, Request, NextFunction } from 'express'
+import cors from 'cors'
 import { mappingRouter } from './routes/mapping.routes'
 import { userRouter } from './routes/user.routes'
 
 const server = express()
 server.use(express.json())
+server.use(cors())
 
 const PORT = process.env.PORT || 5000
 
