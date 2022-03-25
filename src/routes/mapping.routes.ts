@@ -11,13 +11,15 @@ const handle = (request: Request, response: Response, next: NextFunction) => {
 
 mappingRouter.get('/skills', handle)
 mappingRouter.post('/skills', handle)
-mappingRouter.get('/records', handle)
+mappingRouter.get('/records/:peopleId', handle)
 mappingRouter.get('/matrix', handle)
 mappingRouter.get('/evaluation', handle)
 mappingRouter.post('/matrix', handle)
 mappingRouter.put('/mapping', handle)
+mappingRouter.get('/mappingNote/:peopleId', handle)
 mappingRouter.get('/evidences', handle)
 mappingRouter.post('/evidences', handle)
-mappingRouter.put('/evaluator', handle)
+mappingRouter.put('/evaluatornote', handle)
+mappingRouter.get('/evaluatornote/:peopleId', handle)
 
 export { mappingRouter }
