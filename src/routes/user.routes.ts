@@ -10,6 +10,7 @@ const handle = (request: Request, response: Response, next: NextFunction) => {
 }
 
 userRouter.post('/user', handle)
+userRouter.get('/user/:userId', handle)
 userRouter.post('/login', handle)
 userRouter.get('/students', handle)
 
