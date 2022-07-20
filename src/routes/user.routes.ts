@@ -13,5 +13,6 @@ userRouter.post('/user', handle)
 userRouter.get('/user/:userId', handle)
 userRouter.post('/login', handle)
 userRouter.get('/students', handle)
+userRouter.get('/students/company/:companyId', handle)
 
 export { userRouter }
